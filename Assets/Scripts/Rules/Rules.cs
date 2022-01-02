@@ -12,5 +12,4 @@ public class Rules : ScriptableObject
     {
         return results[0];
     }
-
 }
