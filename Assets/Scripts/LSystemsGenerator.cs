@@ -7,10 +7,10 @@ using UnityEngine;
 public class LSystemsGenerator : MonoBehaviour
 {
     public Rules[] rules;
-    public string rootSentence;
+    public string axiom;
 
     [Range(0,4)]
-    public int iterationLimit = 1;
+    public int generations = 1;
 
     private void Start()
     {
@@ -21,7 +21,7 @@ public class LSystemsGenerator : MonoBehaviour
     {
         if(word==null)
         {
-            word = rootSentence;
+            word = axiom;
         }
 
         return GrowRecursive(word);
@@ -29,7 +29,7 @@ public class LSystemsGenerator : MonoBehaviour
 
     private string GrowRecursive(string word,int iterationIndex=0)
     {
-        if(iterationIndex>=iterationLimit)
+        if(iterationIndex>=generations)
         {
             return word;
         }
